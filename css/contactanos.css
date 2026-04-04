@@ -1,0 +1,278 @@
+/* 1. EL TRUCO DEL FOOTER SIEMPRE ABAJO */
+html, body {
+    height: 100%; /* Obliga al navegador a medir toda la pantalla */
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Alinea los bloques uno debajo de otro */
+}
+
+main {
+    flex: 1; /* Este bloque crecerá para ocupar todo el espacio vacío, 
+                empujando el footer al final automáticamente */
+}
+
+/* 2. ALINEACIÓN PARA CUALQUIER ENTORNO (Responsive) */
+.container, main, section {
+    width: 90%;          /* En celulares no toca los bordes */
+    max-width: 1200px;   /* En computadoras grandes no se estira de más */
+    margin: 0 auto;      /* Centra todo el contenido */
+}
+
+/* 3. AJUSTES PARA CELULARES (Media Queries) */
+@media (max-width: 768px) {
+    /* El menú se vuelve vertical o más compacto */
+    .nav-menu {
+        gap: 15px; 
+        flex-wrap: wrap; /* Si no caben, se ponen uno abajo de otro */
+        justify-content: center;
+    }
+
+    /* Los videos y el footer se apilan verticalmente */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .video-container {
+        grid-template-columns: 1fr; /* Un video por fila en celulares */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Texto más pequeño en móvil */
+    }
+}
+
+/* Navegación Superior */
+.navbar-destacada {
+    /*display: flex;
+    justify-content: center; /*centra la lista horizontal*/
+    /*background: #ffffff;
+    padding: 15px 0;
+    /*display: flex;*/
+    /*justify-content: flex-end;*/
+    /*border-bottom: 1px solid #eee;*/
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);/*sombra sutil*/
+    background-color: #1d3557; /*color de fondo oscuro elegante*/
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /*centra el menu*/
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /*sombra para dar profundidad*/
+}
+
+/*Estilo de la lista*/
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /*espacio entre cada opcion*/
+  margin: 0;
+  padding: 0;
+}
+
+/*estilo de enlaces*/
+.nav-link {
+  text-decoration: none;
+  color: #ffffff; /*color inicial (gris oscuro)*/
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /*centra icono y texto verticalmente*/
+  gap: 12px; /*espacio entre icono y texto*/
+  transition: all color 0.3s ease; /*hace que el cambio de color sea suave*/
+  padding: 10px 20px;
+  border-radius: 8px; 
+}
+
+/*estilo de iconos*/
+.nav link i {
+  font-size: 1.4rem; /*icono un poco mas grande que el texto*/
+  color: #ffcc00; /*color dorado/amarillo para los iconos */
+}
+
+/*cambio de color al seleccionar/pasar el mouse*/
+.nav-link:hover {
+    /*color: #0056b3; /*color azul al pasar el mouse*/
+  background-color: rgba(255, 255, 255, 0.1); /*fondo sutil al tocar*/
+  color: #ffcc00; /*el texto cambio al color del icono*/
+  transform: translateY(-3px); /*pequeño brinco hacia arriba*/
+}
+
+/*.nav-link:active{
+    color: #ff4500; /*color azul al pasar el mouse*/
+/*}*/
+
+/*titulo central*/
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    color: #1a3a5a; /*color azul oscuro el de tu imagen*/
+    font-size: 2rem;
+    letter-spacing: 1px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #e63946; /* Color de énfasis */
+}
+
+
+/* ESTILO DEL FORMULARIO DINÁMICO */
+.contacto-container {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1a3a5a;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Resalte cuando haces clic en una caja */
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #ffcc00;
+}
+
+/* BOTÓN DINÁMICO */
+.btn-enviar {
+    background-color: #1a3a5a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: #ffcc00;
+    color: #1a3a5a;
+    transform: scale(1.02);
+}
+
+/* Footer */
+.footer-interactivo {
+    background: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; /*separa las seccioens*/
+    align-items: center; 
+    flex-wrap: wrap; /*se adapta a celulares*/
+    gap: 30px; 
+}
+
+.footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/*iconos redes sociales*/
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-link {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: all s.3s ease;
+}
+
+.icon-link:hover {
+    color: #ffcc00; /*dorado al pasar el mouse*/
+    transform: translate(-5px) scale(1.2);
+}
+
+/*boton libro de reclamaciones*/
+.libro-reclamaciones {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.libro-reclamaciones i {
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.libro-reclamaciones :hover {
+    background-color: #ffcc00;
+    color: #1a3a5a;
+    border-color: #ffcc00;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+}
+
+.libro-reclamaciones i {
+    color: #1a3a5a;
+}
+
+
+/*copyriht al fondo*/
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}

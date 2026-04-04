@@ -1,0 +1,419 @@
+body {
+
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+
+/* 1. EL TRUCO DEL FOOTER SIEMPRE ABAJO */
+html, body {
+    height: 100%; /* Obliga al navegador a medir toda la pantalla */
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Alinea los bloques uno debajo de otro */
+}
+
+main {
+    flex: 1; /* Este bloque crecerá para ocupar todo el espacio vacío, 
+                empujando el footer al final automáticamente */
+}
+
+/* 2. ALINEACIÓN PARA CUALQUIER ENTORNO (Responsive) */
+.container, main, section {
+    width: 90%;          /* En celulares no toca los bordes */
+    max-width: 1200px;   /* En computadoras grandes no se estira de más */
+    margin: 0 auto;      /* Centra todo el contenido */
+}
+
+/* 3. AJUSTES PARA CELULARES (Media Queries) */
+@media (max-width: 768px) {
+    /* El menú se vuelve vertical o más compacto */
+    .nav-menu {
+        gap: 15px; 
+        flex-wrap: wrap; /* Si no caben, se ponen uno abajo de otro */
+        justify-content: center;
+    }
+
+    /* Los videos y el footer se apilan verticalmente */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .video-container {
+        grid-template-columns: 1fr; /* Un video por fila en celulares */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Texto más pequeño en móvil */
+    }
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navegación Superior */
+.navbar-destacada {
+    /*display: flex;
+    justify-content: center; /*centra la lista horizontal*/
+    /*background: #ffffff;
+    padding: 15px 0;
+    /*display: flex;*/
+    /*justify-content: flex-end;*/
+    /*border-bottom: 1px solid #eee;*/
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);/*sombra sutil*/
+    background-color: #1d3557; /*color de fondo oscuro elegante*/
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /*centra el menu*/
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /*sombra para dar profundidad*/
+}
+
+/*Estilo de la lista*/
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /*espacio entre cada opcion*/
+  margin: 0;
+  padding: 0;
+}
+
+/*estilo de enlaces*/
+.nav-link {
+  text-decoration: none;
+  color: #ffffff; /*color inicial (gris oscuro)*/
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /*centra icono y texto verticalmente*/
+  gap: 12px; /*espacio entre icono y texto*/
+  transition: all color 0.3s ease; /*hace que el cambio de color sea suave*/
+  padding: 10px 20px;
+  border-radius: 8px; 
+}
+
+/*estilo de iconos*/
+.nav link i {
+  font-size: 1.4rem; /*icono un poco mas grande que el texto*/
+  color: #ffcc00; /*color dorado/amarillo para los iconos */
+}
+
+/*cambio de color al seleccionar/pasar el mouse*/
+.nav-link:hover {
+    /*color: #0056b3; /*color azul al pasar el mouse*/
+  background-color: rgba(255, 255, 255, 0.1); /*fondo sutil al tocar*/
+  color: #ffcc00; /*el texto cambio al color del icono*/
+  transform: translateY(-3px); /*pequeño brinco hacia arriba*/
+}
+
+/*.nav-link:active{
+    color: #ff4500; /*color azul al pasar el mouse*/
+/*}*/
+
+/*titulo central*/
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    color: #1a3a5a; /*color azul oscuro el de tu imagen*/
+    font-size: 2rem;
+    letter-spacing: 1px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #e63946; /* Color de énfasis */
+}
+
+/* Sección Hero (Bienvenida) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #1d3557;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Galería de Imágenes con Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contenido Principal (Texto + Imagen) */
+.main-content {
+    max-width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+    align-items: center;
+}
+
+.text-area {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text-area h2 {
+    color: #1d3557;
+    margin-bottom: 15px;
+}
+
+.image-area {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-area img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+/* Contenedor principal para centrar todo el bloque */
+.seccion-videos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fcfcfc;
+}
+
+/* El "Grid" que organiza los videos */
+.video-container {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; /* Espacio entre videos */
+    max-width: 1000px; /* Ancho máximo de la galería */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    justify-items: center;
+}
+
+/* Estilo de cada video */
+.video-item {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* EFECTO DINÁMICO AL PASAR EL MOUSE */
+.video-item:hover {
+    transform: scale(1.05); /* Se agranda un poco */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2); /* Sombra más profunda */
+    filter: brightness(1.1); /* Brilla ligeramente */
+}
+
+/* Contenedor principal para centrar */
+.seccion-audio {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f4f7f6; /* Un gris muy claro para resaltar la tarjeta */
+}
+
+/* La tarjeta del reproductor */
+.audio-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Título con icono encima del reproductor */
+.audio-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #1a3a5a; /* Tu azul oscuro */
+    font-weight: bold;
+}
+
+.audio-header i {
+    font-size: 1.5rem;
+    color: #ffcc00; /* Dorado como tu libro de reclamaciones */
+    animation: bounce 2s infinite; /* Animación de rebote */
+}
+
+/* Estilo del reproductor nativo */
+audio {
+    width: 100%;
+    height: 45px;
+    border-radius: 30px;
+}
+
+/* EFECTO DINÁMICO HOVER */
+.audio-card:hover {
+    transform: scale(1.03); /* Crece un poquito */
+    box-shadow: 0 15px 40px rgba(26, 58, 90, 0.15); /* Sombra más fuerte */
+}
+
+/* Animación para el icono de auriculares */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Footer */
+.footer-interactivo {
+    background: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; /*separa las seccioens*/
+    align-items: center; 
+    flex-wrap: wrap; /*se adapta a celulares*/
+    gap: 30px; 
+}
+
+.footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/*iconos redes sociales*/
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-link {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: all s.3s ease;
+}
+
+.icon-link:hover {
+    color: #ffcc00; /*dorado al pasar el mouse*/
+    transform: translate(-5px) scale(1.2);
+}
+
+/*boton libro de reclamaciones*/
+.libro-reclamaciones {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.libro-reclamaciones i {
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.libro-reclamaciones :hover {
+    background-color: #ffcc00;
+    color: #1a3a5a;
+    border-color: #ffcc00;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+}
+
+.libro-reclamaciones i {
+    color: #1a3a5a;
+}
+
+
+
+/*copyriht al fondo*/
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/*.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.audio-section {
+    background-color: #f1f4f8;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.audio-section h3 {
+    color: #1d3557;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.audio-container audio {
+    width: 100%; /* El reproductor ocupará todo el ancho del contenedor */
+/*    outline: none;
+/*}
