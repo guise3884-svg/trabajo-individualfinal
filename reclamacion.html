@@ -1,0 +1,157 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones - Agencia de Viajes</title>
+    <link rel="stylesheet" href="css/libroreclamaciones.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+ <nav class="navbar-destacada">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="actividaes.html" class="nav-link"><i class="fas fa-mountain-sun"></i> Actividades</a></li>
+            <li><a href="viajes.html" class="nav-link"><i class="fas fa-passport"></i> Viajes</a></li>
+            <li><a href="contactanos.html" class="nav-link"><i class="fas fa-paper-plane"></i> contáctanos</a></li> 
+        </ul>    
+</nav>
+
+<main>
+<main class="contenedor-principal">
+    <header class="encabezado-reclamo">
+        <h1>Libro de Reclamaciones</h1>
+        <p>Tu opinión nos ayuda a mejorar. Por favor, completa todos los campos marcados con (*).</p>
+    </header>
+
+    <form action="#" method="POST" class="formulario-hoja">
+        
+        <section class="seccion-formulario">
+            <h2 class="titulo-seccion">Datos personales y de compra</h2>
+            
+            <div class="grupo-input">
+                <label>SELECCIONA EL TIPO DE PERSONA *</label>
+                <div class="opciones-radio">
+                    <label><input type="radio" name="tipo_persona" value="natural" checked> Natural</label>
+                    <label><input type="radio" name="tipo_persona" value="juridica"> Jurídica</label>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label for="direccion">DIRECCIÓN</label>
+                <input type="text" id="direccion" placeholder="Inscribe aquí">
+            </div>
+
+            <div class="grupo-input">
+                <label for="telefono">TELÉFONO CELULAR</label>
+                <input type="tel" id="telefono" placeholder="Inscribe aquí">
+            </div>
+
+            <div class="grupo-input">
+                <label for="pais">PAÍS DE RESIDENCIA</label>
+                <input type="text" id="pais" placeholder="Inscribe aquí">
+            </div>
+
+            <div class="grupo-input">
+                <label for="servicio">PRODUCTO O SERVICIO CONTRATADO *</label>
+                <input type="text" id="servicio" placeholder="Inscribe aquí" required>
+            </div>
+
+            <div class="grupo-input">
+                <label for="reserva">NÚMERO DE LA RESERVA (SI APLICA)</label>
+                <input type="text" id="reserva" placeholder="Inscribe aquí, sólo números">
+            </div>
+        </section>
+
+        <section class="seccion-formulario">
+            <h2 class="titulo-seccion">Información sobre el reclamo</h2>
+            <p class="instruccion">Indica lo que te motivó a hacer el reclamo y lo que podemos hacer por ti.</p>
+
+            <div class="grupo-input">
+                <label>SELECCIONA A QUÉ SE REFIERE TU RECLAMO *</label>
+                <select required>
+                    <option value="">Elige</option>
+                    <option value="atencion">Mala atención</option>
+                    <option value="incumplimiento">Incumplimiento de itinerario</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label>DETALLE DEL RECLAMO *</label>
+                <textarea placeholder="Describe en algunas líneas el motivo de tu reclamo" required></textarea>
+            </div>
+
+            <div class="grupo-input">
+                <label>PEDIDO CONCRETO REFERENTE AL RECLAMO *</label>
+                <textarea placeholder="Describe en pocas líneas tu requerimiento" required></textarea>
+            </div>
+
+            <div class="grupo-input">
+                <label>SELECCIONA LA MONEDA DEL RECLAMO</label>
+                <div class="opciones-radio">
+                    <label><input type="radio" name="moneda" value="pen"> Soles peruanos (PEN)</label>
+                    <label><input type="radio" name="moneda" value="usd"> Dólares (USD)</label>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label>MONTO RECLAMADO</label>
+                <input type="number" step="0.01" placeholder="Ingresa solo números, decimales son permitidos">
+            </div>
+        </section>
+
+        <section class="seccion-formulario">
+            <h2 class="titulo-seccion">Envío de la respuesta</h2>
+            <p class="instruccion">Elige en qué formato te gustaría recibir la respuesta de tu reclamo.</p>
+
+            <div class="grupo-input">
+                <label>SELECCIONA EL FORMATO DE RESPUESTA *</label>
+                <div class="opciones-radio">
+                    <label><input type="radio" name="formato" value="digital"> Digital</label>
+                    <label><input type="radio" name="formato" value="fisico"> Físico</label>
+                </div>
+            </div>
+        </section>
+
+        <div class="contenedor-boton">
+            <button type="submit" class="btn-enviar-final">Enviar reclamo</button>
+        </div>
+    </form>
+</main>
+</main>
+<footer class="footer-interactivo">
+    <div class="footer-container">
+      <div class="footer-section">
+         <h3>Síguenos en nuestras redes:</h3>    
+        <div class="social-icons">
+            <a href="https://www.facebook.com/perutravelexpress" class="icon-link fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/perutravelexpress?fbclid=IwY2xjawQh2b5leHRuA2FlbQIxMABicmlkETFRZXNPSDluRVFHT1RvUDZ2c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHn3GamBpi_7B-uQ54-0XnaE8oAr47AYj2POL6CPbiFkhOgALWjS5aMWJ_cg2_aem_4CN-0rTmSJxg8lTrPrb7Xg" class="icon-link fab fa-instagram"></a>
+            <a href="https://wa.me/977213850" class="icon-link fab fa-whatsapp"></a> 
+        </div>
+      </div>
+      
+      <div class="footer-section">
+          <a href="reclamacion.html" class="libro-reclamaciones">
+            <i class="fa-solid fa-book-open"></i><span>Libro de Reclamaciones</span>
+          </a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+         <p>&copy; 2026 Guisela Todos los derechos reservados.</p>
+    </div>
+
+   <div class="metodos-pago">
+    <p>Compra segura con:</p>
+    <div class="iconos-tarjetas">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+        <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex">
+       <img src="foto/yape.jpg" alt="Yape" class="yape-mini">
+    </div>
+    <span class="pago-seguro-texto">🔒 Transacción encriptada de 256 bits</span>
+</div>
+  </footer> 
+</body>
+</html>
