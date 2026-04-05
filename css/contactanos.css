@@ -297,3 +297,53 @@ textarea {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+.metodos-pago {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria suave */
+    margin-top: 20px;
+}
+
+.metodos-pago p {
+    font-size: 14px;
+    color: #cbd5e0;
+    margin-bottom: 10px;
+}
+
+.iconos-tarjetas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espacio entre logos */
+    flex-wrap: wrap;
+}
+
+.iconos-tarjetas img {
+    width: 45px; /* Tamaño uniforme */
+    height: auto;
+    filter: grayscale(20%); /* Un toque de gris para que se vea más sobrio */
+    transition: filter 0.3s ease;
+}
+
+.iconos-tarjetas img:hover {
+    filter: grayscale(0%); /* Color total al pasar el mouse */
+}
+
+
+.yape-mini {
+    width: 40px !important; /* Un poquito más grande para que se note */
+    height: auto;
+    object-fit: contain;
+    vertical-align: middle; /* Lo alinea con Visa y Mastercard */
+    background-color: #742284; /* El color morado de Yape de fondo por si la imagen es transparente */
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.pago-seguro-texto {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #a0aec0;
+}
