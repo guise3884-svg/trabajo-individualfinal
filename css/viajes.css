@@ -1,11 +1,3 @@
-body {
-
-font-family: 'Arial', sans-serif;
-margin: 0;
-padding: 0;
-}
-
-
 /* 1. EL TRUCO DEL FOOTER SIEMPRE ABAJO */
 html, body {
     height: 100%; /* Obliga al navegador a medir toda la pantalla */
@@ -52,14 +44,6 @@ main {
     h1 {
         font-size: 1.5rem; /* Texto más pequeño en móvil */
     }
-}
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Navegación Superior */
@@ -148,237 +132,85 @@ main {
 
 
 
-/* Contenedor principal que organiza las tarjetas en fila */
-.contenedor-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; /* Gris muy claro para resaltar el blanco */
+    color: #333;
+}
+
+/* Encabezado */
+.hero {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 3px solid #d32f2f; /* Línea roja elegante */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+/* Este es el contenedor que obliga a los hijos a ponerse en fila */
+.contenedor-destinos {
+    display: flex;            /* Activa el modo fila */
+    justify-content: center;  /* Centra las tarjetas en la pantalla */
+    gap: 20px;               /* Deja un espacio de 20px entre cada tarjeta */
+    flex-wrap: wrap;          /* Si no caben (en celulares), se bajan automáticamente */
     padding: 20px;
 }
 
-/* Estilo de la tarjeta */
-.tarjeta-viaje {
+/* Estilo para cada tarjeta individual */
+.tarjeta {
+    width: 300px;             /* Define un ancho fijo para que todas sean iguales */
     background: #fff;
-    width: 280px; /* Ancho de la tarjeta */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center; /* Centra el texto y el botón */
-    transition: transform 0.3s ease;
-}
-
-/* --- CONTROL DE LAS IMÁGENES --- */
-.imagen-box {
-    width: 100%;
-    padding: 15px; /* Crea un margen interno para que la imagen se vea "más pequeña" */
-    display: flex;
-    justify-content: center;
-    position: relative; /* Para la etiqueta de "Oferta" */
-}
-
-.imagen-box img {
-    width: 90%;          /* Hace que la imagen no toque los bordes */
-    height: 160px;       /* Altura fija para que todas sean iguales */
-    object-fit: cover;   /* Evita que la foto se estire feo */
-    border-radius: 10px; /* Redondeado suave para la imagen */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Estilo de la etiqueta de Oferta */
-.etiqueta {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    background: #d32f2f;
-    color: white;
-    padding: 5px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-/* Cuerpo de la tarjeta */
-.cuerpo-tarjeta {
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 15px;
+    text-align: center;       /* Centra el texto y el botón */
 }
 
-.cuerpo-tarjeta h4 {
-    margin-bottom: 10px;
-    color: #1a2a44;
+.tarjeta img {
+    width: 100%;              /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 200px;            /* Altura fija para que no se vean desalineadas */
+    object-fit: cover;        /* Recorta la imagen para que llene el espacio sin deformarse */
+    border-radius: 4px;
 }
 
-.cuerpo-tarjeta p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
+.video-seccion {
+    text-align: center; /* Centra el título y el video */
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Un fondo sutil para separar de las tarjetas */
 }
 
-/* Botón estilizado */
-.btn-detalles {
-    display: inline-block;
-    background-color: #d32f2f;
-    color: white;
-    padding: 8px 20px;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background 0.3s;
+.video-seccion h2 {
+    margin-bottom: 25px;
+    color: #d32f2f; /* El rojo que estamos usando para el proyecto */
+    font-size: 1.8rem;
 }
 
-.btn-detalles:hover {
-    background-color: #b71c1c;
+.video-dinamico {
+    width: 80%;            /* No ocupa todo el ancho, se ve más elegante */
+    max-width: 800px;      /* Pero en pantallas grandes no crece infinitamente */
+    border-radius: 20px;   /* ¡Clave! Bordes muy redondeados para que sea "amigable" */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra profunda para que flote */
+    outline: none;
+    transition: transform 0.3s ease; /* Para que sea dinámico al pasar el mouse */
 }
 
-/* Contenedor Principal */
-/*.seccion-cultura {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
+/* Efecto dinámico: el video se mueve un poco al pasar el mouse */
+.video-dinamico:hover {
+    transform: scale(1.02); 
 }
 
-.cultura-container {
-    max-width: 1100px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-/* Estilo del Texto */
-/*.cultura-texto {
-    flex: 1;
-}
-
-.etiqueta-mes {
-    color: #ffcc00;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-
-.cultura-texto h2 {
-    color: #1a3a5a;
-    font-size: 2.5rem;
-    margin: 10px 0 20px 0;
-}
-
-.highlight {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    border-left: 4px solid #ffcc00;
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-
-.frase-final {
-    margin-top: 20px;
-    font-style: italic;
-    color: #1a3a5a;
-    font-weight: bold;
-}
-
-/* Estilo del Video Dinámico */
-/*.cultura-video {
-    flex: 1;
-}
-
-.video-wrapper {
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-}
-
-.video-wrapper:hover {
-    transform: scale(1.02); /* El video crece sutilmente al pasar el mouse */
-/*}
-
-.cultura-video video {
-    width: 100%;
-    display: block;
-}
-
-/* --- Contenedor Principal --- */
-/* Contenedor principal ahora en modo columna */
-.seccion-cultura {
-    padding: 60px 20px;
-    background-color: #fff;
-}
-
-.cultura-container {
-    max-width: 900px; /* Un poco más estrecho para que el texto sea fácil de leer */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; /* Alinea los elementos uno debajo del otro */
-    align-items: center;    /* Centra todo horizontalmente */
-    text-align: center;     /* Centra el texto de los párrafos */
-    gap: 40px;              /* Espacio entre el texto y el video */
-}
-
-/* Estilos del texto */
-.cultura-texto {
-    width: 100%;
-}
-
-.etiqueta-mes {
-    background: #d32f2f;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.highlight {
-    font-size: 1.2rem;
-    color: #d32f2f;
-    font-weight: 600;
-    margin: 20px 0;
-    padding: 10px;
-    border-top: 2px solid #d32f2f; /* Línea arriba para decorar */
-    border-bottom: 2px solid #d32f2f; /* Línea abajo */
-}
-
-/* Estilos del video centrado */
-.cultura-video {
-    width: 100%;
-    max-width: 750px; /* Tamaño ideal para que no se vea gigante */
-}
-
-.video-wrapper {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-.video-wrapper:hover {
-    transform: scale(1.02); /* Pequeño efecto de zoom al pasar el mouse */
-}
-
-.video-wrapper video {
-    width: 100%;
-    display: block;
-}
-/* ADAPTACIÓN PARA CELULARES */
-@media (max-width: 850px) {
-    .cultura-container {
-        flex-direction: column; /* Apila texto arriba y video abajo */
-        text-align: center;
-    }
-    
-    .highlight {
-        border-left: none;
-        border-top: 2px solid #ffcc00;
-        padding: 15px 0 0 0;
-    }
-}
 
 /* Footer */
 .footer-interactivo {
@@ -453,6 +285,7 @@ main {
 .libro-reclamaciones i {
     color: #1a3a5a;
 }
+
 
 /*copyriht al fondo*/
 .footer-bottom {

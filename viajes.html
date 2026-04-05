@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/viajes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>viajes</title>
 </head>
 <body>
-
-    <nav class="navbar-destacada">
+ <nav class="navbar-destacada">
         <ul class="nav-menu">
             <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="actividaes.html" class="nav-link"><i class="fas fa-mountain-sun"></i> Actividades</a></li>
@@ -17,26 +16,55 @@
             <li><a href="contactanos.html" class="nav-link"><i class="fas fa-paper-plane"></i> contáctanos</a></li> 
         </ul>    
      </nav>
+     
+<main>
 
-   <h2>Paquetes Turísticos Perú 2026: Ofertas Especiales en Todos los Destinos</h2>
-   <hr>
-   <img src="foto/viaje1.jpeg" alt="viaje1" width="200">
-   <img src="foto/viaje2.jpeg" alt="viaje2" width="200">
-   <img src="foto/viaje3.jpeg" alt="viaje3" width="200">
-   
+<header class="hero"> 
+   <h1>Paquetes Turísticos Perú 2026</h1>
+   <p> Ofertas Especiales en Todos los Destinos</p>
+ </header>
+ 
+ <section class="container">
+    <div class="intro-text">
+        <h2>Descubre el Perú con nosotros</h2>
+        <p>Diseñamos experiencias al mejor valor. Desde las alturas de Machu Picchu hasta las profundidades del Cañón del Colca, tenemos la opción perfecta para ti.</p>
+    </div>
 
-   <h3>
-   <br>Descubre el Perú con nuestros paquetes turísticos 2026 diseñados para ofrecerte las mejores experiencias al mejor valor.
-   <br>Desde las alturas de Machu Picchu hasta las profundidades del Cañón del Colca, desde el desierto de Huacachina hasta las islas del Titicaca,
-   <br>tenemos ofertas especiales en todos los destinos principales del país.
+    <div class="contenedor-destinos">
+        <div class="tarjeta">
+          <img src="foto/viaje1.jpeg" alt="Cusco">
+            <h3>Cusco Mistico</h3>
+            <p>Incluye transporte, alojamiento y tours guiados.</p>
+            <button>Ver Detalle</button>
+         </div>
+         
+    <div class="tarjeta">     
+        <img src="foto/viaje2.jpeg" alt="Arequipa">
+            <h3>Arequipa y Colca</h3>
+            <p>Asistencia de expertos locales en cada rincón.</p>
+            <button>Ver Detalle</button>
+    </div>
+    
+    <div class="tarjeta">
+        <img src="foto/viaje3.jpeg" alt="Ica">
+             <h3>Ica y Paracas</h3>
+             <p>Aventura en el desierto y sol todo el año.</p>
+             <button>Ver Detalle</button>
+    </div>
+    </div>
 
-   <br>Nuestros paquetes turísticos incluyen todo lo necesario para que disfrutes tu viaje sin preocupaciones: transporte, alojamiento, tours guiados, 
-   <br>alimentación según el paquete, y la asistencia de expertos locales que conocen cada rincón del Perú. Ya sea que viajes solo, en pareja, en familia o en grupo,
-   <br> tenemos la opción perfecta para ti.
-   </h3>
- <video src="video/viaje.mp4" controls autoplay loop muted></video>
+ </section>
 
-    <footer class="footer-interactivo">
+<div class="video-seccion">
+    <h2>Vive la experiencia</h2>
+    <video class="video-dinamico" controls>
+        <source src="video/viaje.mp4" type="video/mp4">
+        Tu navegador no soporta videos
+    </video>
+</div>
+
+ </main>
+  <footer class="footer-interactivo">
     <div class="footer-container">
       <div class="footer-section">
          <h3>Síguenos en nuestras redes:</h3>    
@@ -57,6 +85,5 @@
     <div class="footer-bottom">
          <p>&copy; 2026 Guisela Todos los derechos reservados.</p>
     </div>
-</footer>
 </body>
 </html>
