@@ -130,8 +130,6 @@ main {
     color: #e63946; /* Color de énfasis */
 }
 
-
-
 /* Configuración General */
 * {
     margin: 0;
@@ -159,6 +157,8 @@ body {
     margin-bottom: 10px;
 }
 
+
+
 /* Este es el contenedor que obliga a los hijos a ponerse en fila */
 .contenedor-destinos {
     display: flex;            /* Activa el modo fila */
@@ -167,6 +167,8 @@ body {
     flex-wrap: wrap;          /* Si no caben (en celulares), se bajan automáticamente */
     padding: 20px;
 }
+
+
 
 /* Estilo para cada tarjeta individual */
 .tarjeta {
@@ -345,4 +347,21 @@ body {
     margin-top: 15px;
     font-size: 12px;
     color: #a0aec0;
+}
+
+
+.btn-detalles {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn-detalles:hover {
+    background-color: #b71c1c;
 }
